@@ -1,6 +1,7 @@
 # Extension
 * Slider
 * Toggle
+* Image
 
 # XUUI
 
@@ -95,7 +96,7 @@ Helloworld例子展现的是类似vue.js的能力，实际项目中，更建议�
 * NoLua.unity: 演示不使用lua，把本框架作为一个mvvm驱动器，纯用C#写逻辑。
 * TestDetach.unity: 演示随意地挂载/卸载UI到一个ViewModel上。
 * App.unity: 演示应用框架怎么使用。
-* Extension.unity : 拓展的ui演示 (Slider、Toggle)
+* Extension.unity : 扩展的ui实现演示 (Slider、Toggle、Image)
 
 
 ## 怎么支持各种UI
