@@ -39,28 +39,53 @@ namespace XUUI.UGUIAdapter
 
         private RawAdapterBase createAdapter(Component component, string bindTo)
         {
-            Text text = component as Text;
-            if (text != null)
+            if (component is Text)
             {
-                return new RawTextAdapter(text, bindTo);
+                Text text = component as Text;
+                if (text != null)
+                {
+                    return new RawTextAdapter(text, bindTo);
+                }
             }
-
-            InputField inputField = component as InputField;
-            if (inputField != null)
+            else if (component is Button)
             {
-                return new RawInputFieldAdapter(inputField, bindTo);
+                Button button = component as Button;
+                if (button != null)
+                {
+                    return new RawButtonAdapter(button, bindTo);
+                }
             }
-
-            Dropdown dropdown = component as Dropdown;
-            if (dropdown != null)
+            else if (component is InputField)
             {
-                return new RawDropdownAdapter(dropdown, bindTo);
+                InputField inputField = component as InputField;
+                if (inputField != null)
+                {
+                    return new RawInputFieldAdapter(inputField, bindTo);
+                }
             }
-
-            Button button = component as Button;
-            if (button != null)
+            else if (component is Dropdown)
             {
-                return new RawButtonAdapter(button, bindTo);
+                Dropdown dropdown = component as Dropdown;
+                if (dropdown != null)
+                {
+                    return new RawDropdownAdapter(dropdown, bindTo);
+                }
+            }
+            else if (component is Slider)
+            {
+                Slider slider = component as Slider;
+                if (slider != null)
+                {
+                    return new RawSliderAdapter(slider, bindTo);
+                }
+            }
+            else if (component is Toggle)
+            {
+                Toggle toggle = component as Toggle;
+                if (toggle != null)
+                {
+                    return new RawToggleAdapter(toggle, bindTo);
+                }
             }
 
             return null;

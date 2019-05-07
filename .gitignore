@@ -1,0 +1,7 @@
+Demo/.vs
+Demo/*.csproj
+Demo/*.sln
+Demo/Library
+Demo/Temp
+Demo/ProjectSettings
+Demo/Packages

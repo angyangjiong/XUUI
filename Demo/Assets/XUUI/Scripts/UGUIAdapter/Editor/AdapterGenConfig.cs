@@ -22,6 +22,10 @@ namespace XUUI.UGUIAdapter
             typeof(RawInputFieldAdapter),
             typeof(RawDropdownAdapter),
             typeof(RawButtonAdapter),
+            typeof(SliderAdapter),
+            typeof(RawSliderAdapter),
+            typeof(ToggleAdapter),
+            typeof(RawToggleAdapter),
         };
 
         [CSharpCallLua]
@@ -30,6 +34,8 @@ namespace XUUI.UGUIAdapter
             typeof(Action),
             typeof(Action<string>),
             typeof(Action<int>),
+            typeof(Action<float>),
+            typeof(Action<bool>),
         };
     }
 }

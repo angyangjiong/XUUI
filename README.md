@@ -1,3 +1,7 @@
+# Extension
+* Slider
+* Toggle
+
 # XUUI
 
 基于xLua的轻量级UI框架。
