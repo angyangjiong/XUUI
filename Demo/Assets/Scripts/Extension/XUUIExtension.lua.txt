@@ -25,9 +25,16 @@ M.computed.toggle_select_message = function(data)
 end
 
 -- ## image
-M.data.image_sprite = {name = "icon";}
+M.data.image_sprite = {name = "icon"; texture2d = nil;}
+
 M.computed.image_load_sprite = function(data)
     return CS.UnityEngine.Resources.Load(data.image_sprite.name);
+end
+
+-- 模拟异步回调
+M.commands.on_simulate_async_load_click = function(data)
+    data.image_sprite.texture2d = CS.UnityEngine.Resources.Load(data.image_sprite.name);
+    data.image_sprite.texture2d = nil; -- 不让lua持有sprite资源
 end
 
 return M;
