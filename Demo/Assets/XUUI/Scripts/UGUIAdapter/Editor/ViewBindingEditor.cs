@@ -36,6 +36,8 @@ namespace XUUI.UGUIAdapter
                 initComponentTypes();
             }
 
+            //GUI.Space();
+
             list = new ReorderableList(serializedObject,
                     serializedObject.FindProperty("Bindings"),
                     true, true, true, true);
@@ -72,16 +74,16 @@ namespace XUUI.UGUIAdapter
                     rect.x += SPLIT_WIDTH;
 
                     EditorGUI.PropertyField(
-                        new Rect(rect.x, rect.y, rect.width - rect.x - 60, EditorGUIUtility.singleLineHeight),
+                        new Rect(rect.x, rect.y, rect.width - rect.x /*- 60*/, EditorGUIUtility.singleLineHeight),
                         element.FindPropertyRelative("BindTo"), GUIContent.none);
                     rect.x += rect.width - rect.x - 65;
 
-                    EditorGUI.LabelField(new Rect(rect.x + 10, rect.y, SPLIT_WIDTH, EditorGUIUtility.singleLineHeight), "|");
-                    rect.x += SPLIT_WIDTH;
+                    //EditorGUI.LabelField(new Rect(rect.x + 10, rect.y, SPLIT_WIDTH, EditorGUIUtility.singleLineHeight), "|");
+                    //rect.x += SPLIT_WIDTH;
 
-                    EditorGUI.PropertyField(
-                        new Rect(rect.x + 20, rect.y, 20, EditorGUIUtility.singleLineHeight),
-                        element.FindPropertyRelative("MultiFields"), GUIContent.none);
+                    //EditorGUI.PropertyField(
+                    //    new Rect(rect.x + 20, rect.y, 20, EditorGUIUtility.singleLineHeight),
+                    //    element.FindPropertyRelative("MultiFields"), GUIContent.none);
                 };
 
             list.drawHeaderCallback = (Rect rect) =>
@@ -101,18 +103,19 @@ namespace XUUI.UGUIAdapter
                 EditorGUI.LabelField(new Rect(rect.x + 10, rect.y, SPLIT_WIDTH, EditorGUIUtility.singleLineHeight), "|");
                 rect.x += SPLIT_WIDTH;
 
-                EditorGUI.LabelField(new Rect(rect.x, rect.y, rect.width - rect.x - 60, EditorGUIUtility.singleLineHeight), "BindTo");
+                EditorGUI.LabelField(new Rect(rect.x, rect.y, rect.width - rect.x /*- 60*/, EditorGUIUtility.singleLineHeight), "BindTo");
                 rect.x += rect.width - rect.x - 79;
 
-                EditorGUI.LabelField(new Rect(rect.x + 10, rect.y, SPLIT_WIDTH, EditorGUIUtility.singleLineHeight), "|");
-                rect.x += SPLIT_WIDTH;
+                //EditorGUI.LabelField(new Rect(rect.x + 10, rect.y, SPLIT_WIDTH, EditorGUIUtility.singleLineHeight), "|");
+                //rect.x += SPLIT_WIDTH;
 
-                EditorGUI.LabelField(new Rect(rect.x, rect.y, 70, EditorGUIUtility.singleLineHeight), "MultiFields");
+                //EditorGUI.LabelField(new Rect(rect.x, rect.y, 70, EditorGUIUtility.singleLineHeight), "MultiFields");
             };
         }
 
         public override void OnInspectorGUI()
         {
+            base.OnInspectorGUI();
             serializedObject.Update();
             list.DoLayoutList();
             serializedObject.ApplyModifiedProperties();

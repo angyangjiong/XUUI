@@ -22,12 +22,9 @@ namespace XUUI.UGUIAdapter
             target = input;
             BindTo = bindTo;
 
-            target.onValueChange.AddListener((val) =>
+            target.onValueChanged.AddListener((val) =>
             {
-                if (OnValueChange != null)
-                {
-                    OnValueChange(val);
-                }
+                OnValueChange?.Invoke(val);
             });
         }
     }

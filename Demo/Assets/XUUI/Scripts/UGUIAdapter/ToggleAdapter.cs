@@ -22,10 +22,7 @@ namespace XUUI.UGUIAdapter
         {
             Target.onValueChanged.AddListener((val) =>
             {
-                if (OnValueChange != null)
-                {
-                    OnValueChange(val);
-                }
+                OnValueChange?.Invoke(val);
             });
         }
     }

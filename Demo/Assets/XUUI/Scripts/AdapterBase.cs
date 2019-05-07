@@ -14,6 +14,15 @@ namespace XUUI
 
         void Awake()
         {
+            //if (Target == null)
+            //{
+            //    Target = gameObject.GetComponent<T>();
+            //}
+        }
+
+        // 添加脚本默认赋值
+        void Reset()
+        {
             if (Target == null)
             {
                 Target = gameObject.GetComponent<T>();

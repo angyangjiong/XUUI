@@ -120,8 +120,7 @@ namespace XUUI
 
         public void Detach(GameObject view, bool throwIfNotFound = false)
         {
-            Action detach;
-            if (detachs.TryGetValue(view, out detach))
+            if (detachs.TryGetValue(view, out Action detach))
             {
                 detachs.Remove(view);
                 detach();

@@ -15,13 +15,13 @@ namespace XUUI.UGUIAdapter
         {
             set
             {
-                Target.text = value == null ? "" : value;
+                Target.text = value ?? "";
             }
         }
 
         void Start()
         {
-            Target.onValueChange.AddListener((val) =>
+            Target.onValueChanged.AddListener((val) =>
             {
                 if (OnValueChange != null)
                 {

@@ -14,10 +14,7 @@ namespace XUUI.UGUIAdapter
         {
             Target.onClick.AddListener(() =>
             {
-                if (OnAction != null)
-                {
-                    OnAction();
-                }
+                OnAction?.Invoke();
             });
         }
     }

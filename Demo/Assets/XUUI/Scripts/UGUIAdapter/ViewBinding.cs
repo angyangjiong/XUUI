@@ -11,6 +11,8 @@ namespace XUUI.UGUIAdapter
         InputField,
         Button,
         Dropdown,
+        Slider,
+        Toggle
     }
 
     [Serializable]
@@ -31,6 +33,12 @@ namespace XUUI.UGUIAdapter
 
     public class ViewBinding : MonoBehaviour
     {
+        private void Start()
+        {
+            
+        }
+
+        [HideInInspector]
         [SerializeField]
         public List<Binding> Bindings;
 

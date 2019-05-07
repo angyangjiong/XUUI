@@ -14,12 +14,10 @@ M.data.toggle_value = {toggle_1 = true , toggle_2 = false};
 M.computed.toggle_select_message = function(data)
 
     if data.toggle_value.toggle_1 then
-        -- print("toggle 1 select..")
         return 'toggle 1 select..';
     end
     
     if data.toggle_value.toggle_2 then
-        -- print("toggle 2 select..")
         return 'toggle 2 select..';
     end
     

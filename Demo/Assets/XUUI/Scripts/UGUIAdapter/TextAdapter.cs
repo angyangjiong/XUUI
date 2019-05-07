@@ -7,6 +7,12 @@ namespace XUUI.UGUIAdapter
     [RequireComponent(typeof(Text))]
     public class TextAdapter : AdapterBase<Text>, DataConsumer<string>
     {
+
+        void Start()
+        {
+
+        }
+
         public string Value
         {
             set
