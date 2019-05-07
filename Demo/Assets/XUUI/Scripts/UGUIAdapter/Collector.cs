@@ -12,7 +12,7 @@ namespace XUUI.UGUIAdapter
         public static object[][] Collect(GameObject go)
         {
             var viewBinding = go.GetComponent<ViewBinding>();
-            if (viewBinding != null)
+            if (viewBinding != null && viewBinding.enabled)
             {
                 return viewBinding.GetAdapters();
             }
@@ -20,16 +20,19 @@ namespace XUUI.UGUIAdapter
             var adapters = go.GetComponentsInChildren<AdapterBase>(true);
 
             var dataProducers = adapters
+                .Where(adapter => adapter.enabled)
                 .Where(adapter => adapter is DataProducer)
                 .Select(o => (object)o)
                 .ToArray();
 
             var dataConsumers = adapters
+                .Where(adapter => adapter.enabled)
                 .Where(adapter => adapter is DataConsumer)
                 .Select(o => (object)o)
                 .ToArray();
 
             var eventEmitters = adapters
+                .Where(adapter => adapter.enabled)
                 .Where(adapter => adapter is EventEmitter)
                 .Select(o => (object)o)
                 .ToArray();

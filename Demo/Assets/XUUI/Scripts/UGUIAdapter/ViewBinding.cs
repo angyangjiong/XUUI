@@ -12,7 +12,8 @@ namespace XUUI.UGUIAdapter
         Button,
         Dropdown,
         Slider,
-        Toggle
+        Toggle,
+        Image
     }
 
     [Serializable]
@@ -93,6 +94,14 @@ namespace XUUI.UGUIAdapter
                 if (toggle != null)
                 {
                     return new RawToggleAdapter(toggle, bindTo);
+                }
+            }
+            else if (component is Image)
+            {
+                Image image = component as Image;
+                if (image != null)
+                {
+                    return new RawImageAdapter(image, bindTo);
                 }
             }
 

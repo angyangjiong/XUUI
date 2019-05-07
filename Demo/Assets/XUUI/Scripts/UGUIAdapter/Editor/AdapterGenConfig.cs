@@ -2,10 +2,10 @@
 using System;
 using XLua;
 using UnityEngine.UI;
+using UnityEngine;
 
 namespace XUUI.UGUIAdapter
 {
-
     public static class AdapterGenConfig
     {
         [LuaCallCSharp]
@@ -26,6 +26,9 @@ namespace XUUI.UGUIAdapter
             typeof(RawSliderAdapter),
             typeof(ToggleAdapter),
             typeof(RawToggleAdapter),
+            typeof(Texture2D),
+            typeof(ImageAdaper),
+            typeof(RawImageAdapter),
         };
 
         [CSharpCallLua]
@@ -36,6 +39,7 @@ namespace XUUI.UGUIAdapter
             typeof(Action<int>),
             typeof(Action<float>),
             typeof(Action<bool>),
+            typeof(Action<Texture2D>),
         };
     }
 }

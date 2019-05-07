@@ -24,6 +24,10 @@ M.computed.toggle_select_message = function(data)
     return 'not select'
 end
 
-
+-- ## image
+M.data.image_sprite = {name = "icon";}
+M.computed.image_load_sprite = function(data)
+    return CS.UnityEngine.Resources.Load(data.image_sprite.name);
+end
 
 return M;
